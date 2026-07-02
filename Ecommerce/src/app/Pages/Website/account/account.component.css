@@ -1,0 +1,105 @@
+/* Centering and styling the card */
+.card {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Adding shadow and padding to the card */
+.card-body {
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+/* Styling the welcome message */
+.welcome-message {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem; /* Added space below the welcome message */
+}
+
+/* Styling the form labels and inputs */
+.form-group {
+  margin-bottom: 1.5rem; /* Added space between form groups */
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Added space below the labels */
+  display: block;
+}
+
+.form-control {
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 0.75rem; /* Added padding inside input fields */
+}
+
+/* Adjusting the buttons */
+.text-center {
+  margin-top: 1.5rem; /* Added space above the buttons */
+}
+
+.btn-primary, .btn-success {
+  width: 120px;
+}
+
+/* Adding a slight hover effect */
+.btn-primary:hover, .btn-success:hover {
+  opacity: 0.9;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 576px) {
+  .form-group.row {
+      display: block;
+      margin-bottom: 15px;
+  }
+  
+  .form-group.row label {
+      margin-bottom: 5px;
+  }
+  
+  .form-group.row .col-sm-9 {
+      padding-left: 0;
+      padding-right: 0;
+  }
+  
+  .btn-primary, .btn-success {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
+
+.navbar-brand {
+    color: white !important;
+  }
+  .navbar-nav.ml-auto {
+    margin-left: auto;
+  }
+  
+  .navbar-nav.ml-auto > li {
+    margin-left: 10px;
+  }
+
+  
+  .account-title {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+    position: relative;
+  }
+  
+  .account-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #007bff; /* Accent color */
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+  

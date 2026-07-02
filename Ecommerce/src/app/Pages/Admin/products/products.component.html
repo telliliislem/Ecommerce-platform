@@ -1,0 +1,88 @@
+<div class="row">
+  <div [ngClass]="isSidePanelVisible ? 'col-8' : 'col-12'">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <div class="row">
+          <div class="col-6">Product List</div>
+          <div class="col-6 text-end">
+            <button class="btn btn-sm btn-success" (click)="openSidePanel()">New</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3" *ngFor="let product of products">
+            <div class="card">
+              <img class="card-img-top" [src]="product.productImageUrl" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">{{product.productName}}</h4>
+                <p class="card-text">{{product.categoryId}}</p>
+                <button class="btn btn-danger" (click)="deleteProduct(product)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4" *ngIf="isSidePanelVisible">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <div class="row">
+          <div class="col-6">New Product</div>
+          <div class="col-6 text-end">
+            <button class="btn btn-sm btn-success" (click)="closeSidePanel()">Close</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="productForm" (ngSubmit)="onSave()">
+          <div class="row">
+            <div class="col-6">
+              <label for="sku">SKU</label>
+              <input type="text" class="form-control" formControlName="productSku" id="sku">
+            </div>
+            <div class="col-6">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" formControlName="productName" id="name">
+            </div>
+            <div class="col-6">
+              <label for="shortName">Short Name</label>
+              <input type="text" class="form-control" formControlName="productShortName" id="shortName">
+            </div>
+            <div class="col-6">
+              <label for="price">Price</label>
+              <input type="number" class="form-control" formControlName="productPrice" id="price">
+            </div>
+            <div class="col-6">
+              <label for="category">Category</label>
+              <select class="form-select" formControlName="fkCategory" id="category" required>
+                <option *ngFor="let cate of categoryList" [value]="cate.CategoryId">{{cate.CategoryName}}</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label for="deliveryTimeSpan">Delivery Time Span</label>
+              <input type="date" class="form-control" formControlName="deliveryTimeSpan" id="deliveryTimeSpan">
+            </div>
+            <div class="col-12">
+              <label for="imageUrl">Image URL</label>
+              <input type="text" class="form-control" formControlName="productImageUrl" id="imageUrl">
+            </div>
+            <div class="col-12">
+              <label for="description">Product Description</label>
+              <textarea rows="4" class="form-control" formControlName="productDescription" id="description"></textarea>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-6">
+              <button type="button" id="reset" class="btn btn-success" (click)="resetForm()">Reset</button>
+            </div>
+            <div class="col-6">
+              <button type="submit" class="btn btn-success">Create Product</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

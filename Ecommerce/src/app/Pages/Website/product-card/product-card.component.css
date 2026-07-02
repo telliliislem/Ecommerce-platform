@@ -1,0 +1,85 @@
+.card {
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-title {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column; /* Changed to column to stack button and message */
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+}
+
+.btn-cart {
+  display: flex;
+  align-items: center;
+  background-color: #28a745; /* Green button color */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease; /* Adjusted transition timing */
+}
+
+.btn-cart svg {
+  margin-left: 8px;
+}
+
+.btn-cart:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1); /* Prevent scaling on hover */
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 300px; /* Adjust to fit design */
+  text-align: center;
+}

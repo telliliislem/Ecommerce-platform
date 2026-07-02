@@ -1,0 +1,73 @@
+<div class="container">
+  <h2>Orders</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Customer Name</th>
+        <th>Customer Email</th>
+        <th>Payment Narration</th>
+        <th>Delivery Address</th>
+        <th>Delivery City</th>
+        <th>Is Canceled</th>
+        <th>Delivery Pin Code</th>
+        <th>Order Date</th>
+        <th>Products</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.CustomerName }}</td>
+        <td>{{ order.CustomerEmail }}</td>
+        <td>{{ order.PaymentNarration }}</td>
+        <td>{{ order.DeliveryAddress }}</td>
+        <td>{{ order.DeliveryCity }}</td>
+        <td>{{ order.IsCanceled }}</td>
+        <td>{{ order.DeliveryPinCode }}</td>
+        <td>{{ order.SaleDate }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let product of order.products">
+              {{ product.productName }} (Qty: {{ product.ProductQuantity }}) - {{ product.productPrice }}TND
+            </li>
+          </ul>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="delete_Order(order)">Delete</button>
+          <button class="btn btn-primary" (click)="edit_Order(order)">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Update Form -->
+  <div *ngIf="selectedOrder" class="update-form">
+    <h3>Update Order</h3>
+    <form [formGroup]="updateForm" (ngSubmit)="update_Order()">
+      <div class="form-group">
+        <label>Payment Narration</label>
+        <input formControlName="PaymentNarration" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Delivery Address</label>
+        <input formControlName="DeliveryAddress" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Delivery City</label>
+        <input formControlName="DeliveryCity" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Is Canceled</label>
+        <select formControlName="IsCanceled" class="form-control">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Delivery Pin Code</label>
+        <input formControlName="DeliveryPinCode" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-success">Update Order</button>
+    </form>
+  </div>
+</div>

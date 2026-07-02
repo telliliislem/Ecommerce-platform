@@ -1,0 +1,346 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-yellow {
+  background-color: #ffcc00; /* Yellow color */
+}
+
+.hero-section {
+  background-image: url('https://img.freepik.com/free-psd/3d-rendering-ecommerce-background_23-2151386708.jpg?w=1060&t=st=1723797599~exp=1723798199~hmac=7eddb6bb343357af1dc7a59252e6db6dbd82a6b9c2ef4ad710f198142894882a');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  width: 100vw; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  padding: 50px; 
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  margin: 0;
+  color: #000;
+}
+
+.hero-content h6 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #000;
+}
+
+.hero-content .btn-primary {
+  background-color: #ffcc00;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero-content .btn-primary:hover {
+  background-color: #e0b800;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-form input[type="search"] {
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.search-form button[type="submit"] {
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-form button[type="submit"]:hover {
+  background-color: #333;
+}
+.offers-section {
+  padding: 50px 0;
+  background-color: #f4f4f4; /* Light gray background */
+}
+
+.offer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+  justify-content: center;
+}
+
+.offer-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px); /* Lift the card */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.offer-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.offer-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.offer-name {
+  font-size: 1.5em;
+  margin: 0;
+  color: #333; /* Darker text for better readability */
+}
+
+.offer-discount {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #e74c3c; /* Red color for discount */
+}
+
+.offer-status {
+  font-size: 1em;
+  color: #27ae60; /* Green color for active offers */
+}
+
+.offer-details {
+  padding: 15px;
+  background: rgba(0,0,0,0.8); /* Dark overlay for the details section */
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.offer-card:hover .offer-details {
+  opacity: 1;
+  background: rgba(0,0,0,0.9); /* Darker background on hover */
+}
+
+.offer-description {
+  font-size: 0.9em;
+  margin: 10px 0;
+}
+.info-sections {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+
+.about-section, .contact-section {
+  padding: 20px;
+  background-color: #ffffff; /* Set same background color */
+  margin: 10px;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2, .contact-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-section p, .contact-section p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.contact-list a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px; /* Space between icons */
+  margin: 0;
+}
+
+.social-links li {
+  margin: 0;
+}
+
+.social-links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer p {
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .info-sections {
+    flex-direction: column;
+  }
+}
+
+
+/* Search Form Styles */
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-form input[type="search"] {
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.search-form button[type="submit"] {
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-form button[type="submit"]:hover {
+  background-color: #333;
+}
+
+/* Search Results Styles */
+.search-results {
+  border: 1px solid #ccc;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: white;
+}
+
+.search-results ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  color: black;  /* Set the text color to black */
+}
+
+.product-image-container {
+  flex-shrink: 0;
+  width: 50px;  /* Adjust as needed */
+  height: 50px;
+  margin-right: 10px;
+}
+
+.search-results img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-name {
+  font-size: 1rem;
+  color: black;  /* Ensure the text color is black */
+}
+
+.product-short-name {
+  font-size: 0.9rem;
+  color: black;  /* Ensure the text color is black */
+}
+
+.search-results li:hover {
+  background-color: #f0f0f0;
+}
+
+.navbar-nav.ml-auto {
+  margin-left: auto;
+}
+
+.navbar-nav.ml-auto > li {
+  margin-left: 10px;
+}
+.navbar-brand {
+  color: white !important;
+}

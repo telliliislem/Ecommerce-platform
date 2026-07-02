@@ -1,0 +1,24 @@
+# Dependencies
+Ecommerce/node_modules/
+
+# Angular build
+Ecommerce/dist/
+Ecommerce/.angular/
+
+# Python cache
+backend/__pycache__/
+backend/**/*.pyc
+
+# Virtual environment
+venv/
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+

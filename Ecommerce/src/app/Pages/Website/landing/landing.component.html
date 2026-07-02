@@ -1,0 +1,170 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light nav-yellow border-bottom border-top p-0">
+        <div class="container">
+            <a class="navbar-brand" href="/shop">Consume-619</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/shop">Home <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                          </svg></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <span class="nav-link dropdown-toggle" id="categoriesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</span>
+                        <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                            <a class="dropdown-item" href="/household">Household Appliances</a>
+                            <a class="dropdown-item" href="/electronics">Electronics</a>
+                            <a class="dropdown-item" href="/clothes">Clothes</a>
+                            <a class="dropdown-item" href="/books">Books</a>
+                            <a class="dropdown-item" href="/home">Home</a>
+                        </div>
+                    </li>                    
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" *ngIf="!isLoggedIn">
+                        <a class="nav-link" href="/log" data-toggle="modal" data-target="#signInModal">Login<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                          </svg></a>
+                    </li>
+                    <li class="nav-item" *ngIf="!isLoggedIn">
+                        <a class="nav-link" href="/sign-in" data-toggle="modal" data-target="#signInModal">Sign Up</a>
+                    </li>
+                    <li class="nav-item" *ngIf="isLoggedIn">
+                        <a class="nav-link" (click)="signOut()">Sign Out <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                          </svg></a>
+                    </li>
+                    <li class="nav-item" *ngIf="isLoggedIn">
+                        <a class="nav-link" href="/account">Account <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                          </svg></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart" data-toggle="modal" data-target="#signInModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-dash" viewBox="0 0 16 16">
+                            <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z"/>
+                            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                          </svg></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+  
+<main>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="title">Welcome to Consume-619</h1>
+            <h6 class="parag">Everything you need to sell anywhere!</h6>
+            <a href="/cart" class="btn btn-primary">Shop Now <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket2-fill" viewBox="0 0 16 16">
+                <path d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0zm4-1a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1"/>
+              </svg></a>
+            <form (submit)="onSearch($event)" class="search-form">
+                <input 
+                  type="search" 
+                  [(ngModel)]="searchTerm" 
+                  placeholder="Search..." 
+                  name="search" 
+                  (input)="onSearch($event)"
+                />
+                <button type="submit">Search</button>
+              </form>
+              
+              <div class="search-results" *ngIf="searchResults.length > 0">
+                <ul>
+                  <li *ngFor="let product of searchResults" (click)="onProductClick(product)">
+                    <div class="product-image-container">
+                      <img [src]="product.productImageUrl" alt="{{ product.productName }}" />
+                    </div>
+                    <span class="product-name">{{ product.productName }}</span>
+                    <span class="product-short-name">{{ product.productShortName }}</span>
+                  </li>
+                </ul>
+              </div>              
+        </div>
+    </section>
+
+    <section class="offers-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Our Offers</h2>
+                    <div class="offer-wrapper">
+                        <div class="col-md-4" *ngFor="let item of offers">
+                            <div class="offer-card">
+                                <img [src]="item.imageUrl" alt="{{item.offerName}}" class="offer-image">
+                                <div class="offer-info">
+                                    <h3 class="offer-name">{{item.offerName}}</h3>
+                                    <p class="offer-discount">Discount: {{item.offerPercentDiscount}}%</p>
+                                    <p class="offer-status">
+                                        Status: {{item.isActive ? 'Active' : 'Inactive'}}
+                                    </p>
+                                </div>
+                                <div class="offer-details">
+                                    <p class="offer-description">{{item.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main>
+        <section class="info-sections">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 about-section">
+                        <h2>About Us</h2>
+                        <p>
+                            At Consume-619, we're passionate about bringing the vibrant flavors of Tunisia to your table. Our carefully curated selection of products, all bearing the distinctive "619" barcode, showcases the best of Tunisian craftsmanship and culinary tradition.
+                        </p>
+                        <p>
+                            We believe in delivering quality and authenticity in every product we offer. Whether you're looking for traditional Tunisian spices or artisanal goods, our team is dedicated to providing an exceptional experience that celebrates Tunisia's rich heritage.
+                        </p>
+                    </div>
+                    <div class="col-md-6 contact-section">
+                        <h2>Contact Us</h2>
+                        <p>
+                            Have questions or feedback? We'd love to hear from you! Here’s how you can reach us:
+                        </p>
+                        <ul class="contact-list">
+                            <li><strong>Email:</strong> <a href="mailto:info&#64;consume619.com">info&#64;consume619.com</a></li>
+                            <li><strong>Phone:</strong> <a href="tel:+21612345678">+216 12 345 678</a></li>
+                            <li><strong>Location:</strong> 123 Tunis Street, Tunis, Tunisia</li>
+                            <li><strong>Follow Us:</strong>
+                                <ul class="social-links">
+                                    <li><a href="https://facebook.com/consume619" target="_blank">Facebook <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                                      </svg></a></li>
+                                    <li><a href="https://instagram.com/consume619" target="_blank">Instagram <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                                      </svg></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-center">
+                        &copy; 2024 Consume-619. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    

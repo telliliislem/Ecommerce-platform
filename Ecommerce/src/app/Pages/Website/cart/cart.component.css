@@ -1,0 +1,205 @@
+/* Ensure container and button styling */
+.cart-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.cart-title {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #5a6268; /* Accent color */
+  margin: 30px 0;
+  position: relative;
+  border-bottom: 2px solid#5a6268; /* Bottom border for emphasis */
+  padding-bottom: 10px; /* Space for the bottom border */
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-details h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.item-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.quantity-control {
+  margin: 10px 0;
+}
+
+.item-details input[type="number"] {
+  width: 60px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.btn-remove {
+  background-color: #dc3545; /* Red for Remove button */
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Align to the right */
+}
+
+.btn-remove:hover {
+  background-color: #c82333; /* Darker red for hover effect */
+}
+
+.total-amount {
+  margin-top: 30px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #e2e3e5;
+  text-align: center;
+}
+
+.total-amount h3 {
+  font-size: 22px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+form label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+form input,
+form select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+form input::placeholder {
+  color: #888; /* Placeholder text color */
+}
+
+form select {
+  width: 100%;
+  background-color: #fff;
+}
+
+.btn-confirm {
+  background-color: green; /* Blue for Confirm Order button */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center text and icon horizontally */
+}
+
+.btn-confirm:hover {
+  background-color: rgb(2, 97, 2); /* Darker blue for hover effect */
+}
+
+.order-confirmation {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #d4edda; /* Green background for success */
+  color: #155724; /* Dark green text */
+  text-align: center;
+}
+
+.empty-cart-message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #dc3545; /* Red color to indicate empty state */
+  background-color: #f8d7da; /* Light red background */
+  padding: 20px;
+  border: 1px solid #dc3545;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.empty-cart-message p {
+  margin: 0;
+}
+
+.empty-cart-message button {
+  background-color: #6c757d; /* Neutral gray for the button */
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.empty-cart-message button:hover {
+  background-color: #5a6268; /* Darker gray for hover effect */
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #dc3545;
+  border-radius: 4px;
+  background-color: #f8d7da;
+  color: #721c24;
+  text-align: center;
+}
+
+.navbar-brand {
+  color: white !important;
+}
+.navbar-nav.ml-auto {
+  margin-left: auto;
+}
+
+.navbar-nav.ml-auto > li {
+  margin-left: 10px;
+}

@@ -12,8 +12,8 @@ app=FastAPI()
 
 conn=mysql.connector.connect(
     host="localhost",
-    user="root",
-    passwd="rootroot",
+    user="username",
+    passwd="password",
     database="ecommerc"
 )
 mycursor =conn.cursor()
